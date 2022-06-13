@@ -1,9 +1,16 @@
-import './App.css';
+import React from 'react';
 import Header from './components/header/header';
+import Me from './components/Me/Me';
 
 function App() {
   return (
-      <Header/>
+
+    <div>
+    <Header/>,
+    <Me/>,
+   
+    </div>
+     
   );
 }
 

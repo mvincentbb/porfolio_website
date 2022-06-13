@@ -1,0 +1,46 @@
+{
+    "extends": [
+        "standard",
+        "plugin:import/errors",
+        "plugin:react/recommended",
+        "prettier",
+        "prettier/react"
+    ],
+    "rules": {
+        "react/prop-types": 0,
+        "jsx-a11y/label-has-for": 0,
+        "no-console": 0,
+        "react/react-in-jsx-scope": "off",
+        "dot-notation": [2, {"allowKeywords": true, "allowPattern": ""}]
+    },
+    "plugins": [
+        "react",
+        "import",
+        "@babel",
+        "jsx-a11y"
+    ],
+    "parser": "@babel/eslint-parser",
+    "parserOptions": {
+        "requireConfigFile": false,
+        "ecmaVersion": 2018,
+        "sourceType": "module",
+        "ecmaFeatures": {
+            "jsx": true
+        },
+        "babelOptions": {
+            "presets": [
+                "@babel/preset-react"
+            ]
+        }
+    },
+    "env": {
+        "es6": true,
+        "browser": true,
+        "node": true
+    },
+    "settings": {
+        "react": {
+            "version": "16.5.2"
+        }
+    }
+}
