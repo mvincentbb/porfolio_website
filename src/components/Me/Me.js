@@ -1,5 +1,5 @@
 import React from 'react';
-import MyPicture from '../../assets/my_picture.png'
+import MyPicture from '../../assets/my_picture.avif'
 // import LOGO from '../../assets/Logo.svg'
 
 const Me =  () =>{
