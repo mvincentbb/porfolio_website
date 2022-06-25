@@ -13,7 +13,7 @@ const Me =  () =>{
                     Vincent
                     </h1>
                     <h1 className=" text-4xl font-bold text-center md:text-7xl md:text-left">
-                        Paul,
+                        Bakpatina
                     </h1>
                 </div>
                 <div className="profession mt-6">
