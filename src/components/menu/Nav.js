@@ -1,6 +1,5 @@
 import React, {useState} from 'react';
 
-
 import GithubIcon from '../../assets/github_icon_active.svg'
 import GithubIconInactive from '../../assets/github_icon_inactive.svg'
 import LinkledlnIcon from '../../assets/linkledln_icon_active.svg'
@@ -13,61 +12,69 @@ import TwiterIcon from '../../assets/twiter_icon_active.svg'
 import TwiterIconInactive from '../../assets/twiter_icon_inactive.svg'
 
 
+const NAV_ITEMS = [
+	{
+		href: "https://www.facebook.com/vincent.bakpa",
+		alt: "Meta",
+		name: "meta",
+		activeIcon: MetaIcon,
+		inActiveIcon: MetaIconInActive,
+	},
+	{
+		href: "https://github.com/mvincentbb",
+		alt: "github",
+		name: "github",
+		activeIcon: GithubIcon,
+		inActiveIcon: GithubIconInactive,
+	},
+	{
+		href: "https://vincentdepaul.notion.site/Projects-32cc2194c7f542a0998bd28b9897f981",
+		alt: "project",
+		name: "project",
+		activeIcon: ProjectIcon,
+		inActiveIcon: ProjectIconInActive,
+	},
+	{
+		href: "https://www.linkedin.com/in/vincent-bakpatina",
+		alt: "linkedin",
+		name: "linkedin",
+		activeIcon: LinkledlnIcon,
+		inActiveIcon: LinkledlnIconInActive,
+	},
+	{
+		href: "https://twitter.com/BakpatinaP",
+		alt: "twitter",
+		name: "twitter",
+		activeIcon: TwiterIcon,
+		inActiveIcon: TwiterIconInactive,
+	},
+	
+]
+
 const Nav = () => {
-	const [activeNav, setActiveNav] = useState("#")
+	const [activeNav, setActiveNav] = useState(undefined)
  
 	return (
-		<nav
-			className="bg-[#FFFFFF] bg-opacity-30 rounded-3xl w-max px-4 py-2 left-1/2 -translate-x-1/2 bottom-2 flex gap-4 fixed backdrop-blur-lg ">
-			<a href="https://www.facebook.com/vincent.bakpa" target="_blank" rel="noopener noreferrer">
-				<img
-					className="w-10 md:w-auto"
-					alt="Meta"
-					onMouseLeave={() => setActiveNav("#")}
-					onMouseOver={() => setActiveNav("#meta")}
-					src={activeNav === "#meta" ? MetaIcon : MetaIconInActive}
-				/>
-			</a>
-			
-			<a href="https://github.com/mvincentbb" target="_blank" rel="noopener noreferrer">
-				<img
-					className="w-10 md:w-auto"
-					alt="Github"
-					onMouseLeave={() => setActiveNav("#")}
-					onMouseOver={() => setActiveNav("#github")}
-					src={activeNav === "#github" ? GithubIcon : GithubIconInactive}
-				/>
-			</a>
-			
-			<a href="https://vincentdepaul.notion.site/Projects-32cc2194c7f542a0998bd28b9897f981" target="_blank" rel="noopener noreferrer">
-				<img
-					className="w-10 md:w-auto"
-					alt="Project"
-					onMouseLeave={() => setActiveNav("#")}
-					onMouseOver={() => setActiveNav("#project")}
-					src={activeNav === "#project" ? ProjectIcon : ProjectIconInActive}
-				/>
-			</a>
-			
-			<a href="https://www.linkedin.com/in/vincent-bakpatina" target="_blank" rel="noopener noreferrer">
-				<img
-                    className="w-10 md:w-auto"
-                    alt="Project"
-                    onMouseLeave={() => setActiveNav("#")}
-                    onMouseOver={() => setActiveNav("#linkledln")}
-                    src={activeNav === "#linkledln" ? LinkledlnIcon : LinkledlnIconInActive}
-                />
-			</a>
-			
-			<a className="flex items-center" href="https://twitter.com/BakpatinaP" target="_blank" rel="noopener noreferrer">
-				<img
-                    className="w-10 md:w-auto"
-                    alt="Twitter"
-                    onMouseLeave={() => setActiveNav("#")}
-                    onMouseOver={() => setActiveNav("#twiter")}
-                    src={activeNav === "#twiter" ? TwiterIcon : TwiterIconInactive}
-                />
-			</a>
+		<nav className="bg-white bg-opacity-30 rounded-3xl w-max px-4 py-2 left-1/2 -translate-x-1/2 bottom-2 flex gap-4 fixed backdrop-blur-lg items-center">
+			{
+				NAV_ITEMS.map(item => (
+					<a
+						className={`transition ease-in-out delay-150 duration-300 transition-all ${ activeNav === item.name ? 'scale-75' : '' } hover:scale-60`}
+						key={item.name}
+						href={item.href}
+						target="_blank"
+						rel="noopener noreferrer"
+					>
+						<img
+							alt="Meta"
+							className="w-10 md:w-auto"
+							onMouseLeave={() => setActiveNav(undefined)}
+							onMouseOver={() => setActiveNav(item.name)}
+							src={activeNav === item.name ? item.activeIcon : item.inActiveIcon}
+						/>
+					</a>
+				))
+			}
 		</nav>
 	);
 }
