@@ -10,7 +10,7 @@ import ProjectIcon from '../../assets/project_icon_active.svg'
 import ProjectIconInActive from '../../assets/project_icon_inactive1.svg'
 import TwiterIcon from '../../assets/twiter_icon_active.svg'
 import TwiterIconInactive from '../../assets/twiter_icon_inactive.svg'
-
+import { motion } from 'framer-motion'
 
 const NAV_ITEMS = [
 	{
@@ -58,13 +58,18 @@ const Nav = () => {
 		<nav className="bg-white bg-opacity-30 rounded-3xl w-max px-4 py-2 left-1/2 -translate-x-1/2 bottom-2 flex gap-4 fixed backdrop-blur-lg items-center">
 			{
 				NAV_ITEMS.map(item => (
-					<a
-						className={`transition ease-in-out delay-150 duration-300 transition-all ${ activeNav === item.name ? 'scale-75' : '' } hover:scale-60`}
+					// eslint-disable-next-line react/jsx-key
+					<motion.div 
+					whileHover={{ scale: 1.1, transition: { duration: 0.5 } }} 
+					whileTap={{ scale: 0.8 }}
+					>
+						<a
+						// className={`transition ease-in-out delay-150 duration-300 transition-all ${ activeNav === item.name ? 'scale-75' : '' } hover:scale-60`}
 						key={item.name}
 						href={item.href}
 						target="_blank"
 						rel="noopener noreferrer"
-					>
+						>
 						<img
 							alt="Meta"
 							className="w-10 md:w-auto"
@@ -73,6 +78,9 @@ const Nav = () => {
 							src={activeNav === item.name ? item.activeIcon : item.inActiveIcon}
 						/>
 					</a>
+					</motion.div>
+
+				
 				))
 			}
 		</nav>
