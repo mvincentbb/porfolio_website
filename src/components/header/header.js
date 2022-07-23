@@ -1,5 +1,8 @@
 import React from 'react';
-import LOGO from '../../assets/Logo.svg'
+import LOGO from '../../assets/Logo.svg' 
+// eslint-disable-next-line import/no-unresolved
+// import LOGO from './assets/Logo.svg'
+
 
 const Header =  () =>{
 

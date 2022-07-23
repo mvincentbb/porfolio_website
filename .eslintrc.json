@@ -6,6 +6,18 @@
         "prettier",
         "prettier/react"
     ],
+    "settings": {
+        "react": {
+            "version": "16.5.2"
+        },
+        "import/resolver": {
+            "node": {
+              "paths": ["src"],
+              "extensions": [".js", ".jsx", ".ts", ".tsx"]
+            }
+          }
+    },
+
     "rules": {
         "react/prop-types": 0,
         "jsx-a11y/label-has-for": 0,
@@ -37,10 +49,5 @@
         "es6": true,
         "browser": true,
         "node": true
-    },
-    "settings": {
-        "react": {
-            "version": "16.5.2"
-        }
     }
 }

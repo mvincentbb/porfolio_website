@@ -72,7 +72,7 @@ const Nav = () => {
 						>
 						<img
 							alt="Meta"
-							className="w-10 md:w-auto"
+							className="w-10 md:w-16 "
 							onMouseLeave={() => setActiveNav(undefined)}
 							onMouseOver={() => setActiveNav(item.name)}
 							src={activeNav === item.name ? item.activeIcon : item.inActiveIcon}
