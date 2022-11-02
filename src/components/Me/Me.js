@@ -18,9 +18,9 @@ const Me =  () =>{
                     </h1>
                 </div>
                 <div className="profession mt-6">
-                <h1 className=" text-2xl font-bold text-center md:text-5xl md:text-left">
+                {/* <h1 className=" text-2xl font-bold text-center md:text-5xl md:text-left">
                     Medical Doctor
-                    </h1>
+                    </h1> */}
                     <h1 className=" text-2xl font-bold text-center md:text-5xl md:text-left">
                     Software Engineer
                     </h1>
