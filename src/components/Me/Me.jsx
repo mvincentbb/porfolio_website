@@ -1,6 +1,8 @@
 import React from 'react';
+import {useState} from 'react'
 import MyPicture from '../../assets/my_picture.avif'
-
+// import LOGO from '../../assets/Logo.svg'
+// import LOGO from '../../assets/Logo.svg'
 
 const Me =  () =>{
 
@@ -21,7 +23,7 @@ const Me =  () =>{
                     Medical Doctor
                     </h1> */}
                     <h1 className=" text-2xl font-bold text-center md:text-5xl md:text-left">
-                    Devops Engineer
+                    Software Engineer
                     </h1>
                 </div>
                 <div className="quote md:max-w-xs  md:mt-24 ">
@@ -30,7 +32,7 @@ const Me =  () =>{
                     </h1>
                     <h2 className="md:md:text-xl">
                     Helping people around me is my passion;
-
+                     programming and healing is one way to do it
                     </h2>
                     <h1 className="text-2xl  font-bold text-right md:text-6xl md:text-right">
                     ”

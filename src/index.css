@@ -15,7 +15,7 @@
 
 body {
   font-family: 'Comfortaa', cursive;
-  background-image: url("../src/assets/porfolio_background.svg");
+  /*background-image: url("../src/assets/porfolio_background.svg");*/
   background-size: cover;
   color : hsl(0, 100%, 0%);
 }

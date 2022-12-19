@@ -1,5 +1,6 @@
 import React, {useState} from "react"
 import LOGO from "../../assets/Logo.svg"
+import {Link} from "react-router-dom";
 
 
 // eslint-disable-next-line import/no-unresolved
@@ -14,18 +15,18 @@ const Header = () => {
       <div className="flex items-center justify-between">
         {/* Logo */}
         <div className="pt-4">
-          <a href="/">
+          <Link to="/home" className="">
             <img src={LOGO} alt="" />
-          </a>
+          </Link>
         </div>
         {/* Menu Item */}
         <div className="hidden md:flex space-x-60">
+
           <a href="#" className="hover:text-blue  hover:font-bold">
             BLOG
           </a>
-          <a href="#" className="hover:text-blue hover:font-bold">
-            ABOUT
-          </a>
+          <Link to="/" className="hover:text-blue hover:font-bold">ABOUT</Link>
+
         </div>
 
             {/*  Hamburger Icon */}
@@ -46,7 +47,7 @@ const Header = () => {
           <div id="menu" 
 
         //   absolute flex-col items-center hidden self-end py-8 mt-10 space-y-6 font-bold bg-white sm:w-auto sm:self-center left-6 right-6 drop-shadow-md
-          className=  { hamburgerMenuSelected === true ?
+          className =  { hamburgerMenuSelected === true ?
             `absolute flex flex-col 
             items-center   
            self-end -mt-4 py-6 px-8 space-y-6 font-bold bg-white sm:w-auto 

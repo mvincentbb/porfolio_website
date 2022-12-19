@@ -4,8 +4,8 @@ import GithubIcon from '../../assets/github_icon_active.svg'
 import GithubIconInactive from '../../assets/github_icon_inactive.svg'
 import LinkledlnIcon from '../../assets/linkledln_icon_active.svg'
 import LinkledlnIconInActive from '../../assets/linkledln_icon_inactive.svg'
-import MetaIcon from '../../assets/meta_icon_active.svg'
-import MetaIconInActive from '../../assets/meta_icon_inactive.svg'
+// import MetaIcon from '../../assets/meta_icon_active.svg'
+// import MetaIconInActive from '../../assets/meta_icon_inactive.svg'
 import ProjectIcon from '../../assets/project_icon_active.svg'
 import ProjectIconInActive from '../../assets/project_icon_inactive1.svg'
 import TwiterIcon from '../../assets/twiter_icon_active.svg'
@@ -13,13 +13,13 @@ import TwiterIconInactive from '../../assets/twiter_icon_inactive.svg'
 import { motion } from 'framer-motion'
 
 const NAV_ITEMS = [
-	{
-		href: "https://www.facebook.com/vincent.bakpa",
-		alt: "Meta",
-		name: "meta",
-		activeIcon: MetaIcon,
-		inActiveIcon: MetaIconInActive,
-	},
+	// {
+	// 	href: "https://www.facebook.com/vincent.bakpa",
+	// 	alt: "Meta",
+	// 	name: "meta",
+	// 	activeIcon: MetaIcon,
+	// 	inActiveIcon: MetaIconInActive,
+	// },
 	{
 		href: "https://github.com/mvincentbb",
 		alt: "github",
@@ -79,7 +79,6 @@ const Nav = () => {
 						/>
 					</a>
 					</motion.div>
-
 				
 				))
 			}
