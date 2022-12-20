@@ -18,7 +18,7 @@ jobs:
           node-version: "18"
       - name: Installing dependencies
         run: |
-          npm i yarn
+          npm install yarn
           yarn install 
       - name: Building project
         run: yarn build
