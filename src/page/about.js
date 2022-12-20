@@ -1,15 +1,39 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import Header from '../components/header/header';
 
+
+
 export default function About(){
+
+    const [count, setCount] = useState(0)
+    // const addCount = ()=> setCount(count + 1)
+
+    useEffect(() => {
+        // Access count value from session storage
+
+        var pageView = sessionStorage.getItem("pageView")
+        if (pageView == null) {
+            // Initialize page views count
+            pageView = 1;
+        } else {
+            // Increment count
+            pageView = Number(pageView) + 1;
+        }
+        // Update session storage
+        sessionStorage.setItem("pageView", pageView);
+        setCount(pageView);
+    }, []); //No dependency to trigger in each page load
+
     return(
- 
+
+
         <div>
             <Header/>
-            
+            {/*{onload() = ()=> setCount(count+ 1)}*/}
+            {/*onClick={() => setCount(count + 1)}*/}
             <>
                 <meta httpEquiv="Content-Type" content="text/html; charset=utf-8" />
-                <title>Vincent BAKPATINA</title>
+                <title>Vincent BAKPATINA  </title>
                 <style
                     dangerouslySetInnerHTML={{
                         __html:
@@ -31,7 +55,7 @@ export default function About(){
                             {/*    src="https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F396f78e4-12c6-4967-94a6-b0d1e0a92a3c%2FGroup_3.png?table=block&id=31830723-b81e-4cea-af8e-16ddc19023bd&spaceId=0c602fc6-0847-44c0-b7c8-791a0e869191&width=250&userId=8bf59343-bc16-4d4e-9bc3-4769678ff9b0&cache=v2" */}
                             {/* /> */}
                         </div>
-                        <h1 className="page-title">Vincent BAKPATINA</h1>
+                        <h1 className="page-title">Vincent BAKPATINA {count}</h1>
                     </header>
                     <div className="page-body">
                         <h3 id="a4a95dcc-2fee-411a-84cd-38ea5cec4ac3" className="">
@@ -468,6 +492,9 @@ export default function About(){
                         <p id="1b69eb92-8d1c-44da-bf6d-557171fc1072" className=""></p>
                     </div>
                 </article>
+
+                <p>                         <h3 className="">Number of page views :  {count}</h3>
+                </p>
             </>
 
         </div>
