@@ -3,9 +3,6 @@ import LOGO from "../../assets/Logo.svg"
 import {Link} from "react-router-dom";
 
 
-// eslint-disable-next-line import/no-unresolved
-// import LOGO from './assets/Logo.svg'
-
 
 
 const Header = () => {

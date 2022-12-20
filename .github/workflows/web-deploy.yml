@@ -15,11 +15,11 @@ jobs:
       - name: Installing Node.js 
         uses: actions/setup-node@v3
         with:
-          node-version: "18"
+          node-version: "16"
       - name: Installing dependencies
         run: |
           npm install yarn
-          yarn
+          yarn install
       - name: Building project
         run: yarn build
       - name: Configure AWS Credentials
