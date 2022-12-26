@@ -1,27 +1,64 @@
 import React, {useEffect, useState} from 'react';
 import Header from '../components/header/header';
+import {API_URL} from "../utils/api";
+import axios from "axios";
+import {setSelectionRange} from "@testing-library/user-event/dist/utils";
+
 
 
 
 export default function About(){
 
-    const [count, setCount] = useState(0)
+    const [count, setCount] = useState()
     // const addCount = ()=> setCount(count + 1)
 
     useEffect(() => {
         // Access count value from session storage
+        // Get data from backend
+        let pageView
+        axios.get(`${API_URL}/1`,{
+            headers: {
+                "Access-Control-Allow-Origin": '*',
+                "accept": "*/*",
+                "Access-Control-Allow-Methods": "*",
+                "Access-Control-Allow-Headers": "*"
+            }
+        })
+            .then(response =>{
+                pageView = response.data
+                console.log("pageview",pageView)
+                if (pageView == null ) {
 
-        var pageView = sessionStorage.getItem("pageView")
-        if (pageView == null) {
-            // Initialize page views count
-            pageView = 1;
-        } else {
-            // Increment count
-            pageView = Number(pageView) + 1;
-        }
-        // Update session storage
-        sessionStorage.setItem("pageView", pageView);
-        setCount(pageView);
+                    // Initialize page views count
+                    pageView =  1
+                } else {
+                    // Increment count
+                    pageView = pageView + 1
+                }
+                let visitor = { id: "1" , visitors: pageView}
+                // Update session storage
+                axios.put(API_URL, visitor, {
+                    headers: {
+                        "Access-Control-Allow-Origin": '*',
+                        "accept": "*/*",
+                        "Access-Control-Allow-Methods": "*",
+                        "Access-Control-Allow-Headers": "*"
+                    }
+                })
+                    .then(response => {
+                        console.log(response);
+                    })
+                    .catch(error => {
+                        console.error(error);
+                    });
+                setCount(pageView)
+            })
+
+        // var pageView = sessionStorage.getItem("pageView")
+
+
+
+
     }, []); //No dependency to trigger in each page load
 
     return(
@@ -33,7 +70,7 @@ export default function About(){
             {/*onClick={() => setCount(count + 1)}*/}
             <>
                 <meta httpEquiv="Content-Type" content="text/html; charset=utf-8" />
-                <title>Vincent BAKPATINA  </title>
+                <title>Vincent BAKPATINA </title>
                 <style
                     dangerouslySetInnerHTML={{
                         __html:
@@ -55,7 +92,7 @@ export default function About(){
                             {/*    src="https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F396f78e4-12c6-4967-94a6-b0d1e0a92a3c%2FGroup_3.png?table=block&id=31830723-b81e-4cea-af8e-16ddc19023bd&spaceId=0c602fc6-0847-44c0-b7c8-791a0e869191&width=250&userId=8bf59343-bc16-4d4e-9bc3-4769678ff9b0&cache=v2" */}
                             {/* /> */}
                         </div>
-                        <h1 className="page-title">Vincent BAKPATINA {count}</h1>
+                        <h1 className="page-title">Vincent BAKPATINA</h1>
                     </header>
                     <div className="page-body">
                         <h3 id="a4a95dcc-2fee-411a-84cd-38ea5cec4ac3" className="">
@@ -493,7 +530,7 @@ export default function About(){
                     </div>
                 </article>
 
-                <p>                         <h3 className="">Number of page views :  {count}</h3>
+                <p>                         <h3 className="">Number of page views : {count}</h3>
                 </p>
             </>
 
