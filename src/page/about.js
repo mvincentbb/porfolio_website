@@ -18,10 +18,10 @@ export default function About(){
         let pageView
         axios.get(`${API_URL}/1`,{
             headers: {
-                "Access-Control-Allow-Origin": '*',
-                "accept": "*/*",
-                "Access-Control-Allow-Methods": "*",
-                "Access-Control-Allow-Headers": "*"
+                // "Access-Control-Allow-Origin": '*',
+                // "accept": "*/*",
+                // "Access-Control-Allow-Methods": "*",
+                // "Access-Control-Allow-Headers": "*"
             }
         })
             .then(response =>{
@@ -35,16 +35,9 @@ export default function About(){
                     // Increment count
                     pageView = pageView + 1
                 }
-                let visitor = { id: "1" , visitors: pageView}
+                let visitor = { "id": "1" , "visitors": pageView}
                 // Update session storage
-                axios.put(API_URL, visitor, {
-                    headers: {
-                        "Access-Control-Allow-Origin": '*',
-                        "accept": "*/*",
-                        "Access-Control-Allow-Methods": "*",
-                        "Access-Control-Allow-Headers": "*"
-                    }
-                })
+                axios.put(API_URL, visitor)
                     .then(response => {
                         console.log(response);
                     })
