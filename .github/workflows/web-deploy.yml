@@ -4,7 +4,7 @@ name: web-deploy
 on:
   push:
     branches:
-      - main
+      - dev-main
 jobs:
   # To build the project
   build-portfolio-web:
