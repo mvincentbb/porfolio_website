@@ -53,7 +53,7 @@ const Header = () => {
            items-center   
           self-end -mt-4 py-6 px-8 space-y-6 font-bold bg-white sm:w-auto 
           sm:self-center  right-12 drop-shadow-lg`}>
-            <a href="#">BLOG</a>
+            <a href="https://blog.mvincentpaul.com/" rel="noopener noreferrer">BLOG</a>
             <a href="#">ABOUT</a>
           </div>
         </div>
