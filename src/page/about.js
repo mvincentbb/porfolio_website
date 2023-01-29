@@ -2,9 +2,6 @@ import React, {useEffect, useState} from 'react';
 import Header from '../components/header/header';
 import {API_URL} from "../utils/api";
 import axios from "axios";
-import {setSelectionRange} from "@testing-library/user-event/dist/utils";
-
-
 
 
 export default function About(){
@@ -16,14 +13,7 @@ export default function About(){
         // Access count value from session storage
         // Get data from backend
         let pageView
-        axios.get(`${API_URL}/1`,{
-            headers: {
-                // "Access-Control-Allow-Origin": '*',
-                // "accept": "*/*",
-                // "Access-Control-Allow-Methods": "*",
-                // "Access-Control-Allow-Headers": "*"
-            }
-        })
+        axios.get(`${API_URL}/1`)
             .then(response =>{
                 pageView = response.data
                 console.log("pageview",pageView)
@@ -349,6 +339,15 @@ export default function About(){
                                     <mark className="highlight-blue"> </mark>:{" "}
                                     <a href="http://linkedin.com/in/vincent-bakpatina">
                                         vincent-bakpatina
+                                    </a>
+                                </p>
+                                <p id="c030b968-f970-4ead-b53e-5f46f8e59979" className="">
+                                    <mark className="highlight-blue">
+                                        <code>gt</code>
+                                    </mark>
+                                    <mark className="highlight-blue"> </mark>:{" "}
+                                    <a href="https://github.com/mvincentbb">
+                                        github.com/mvincentbb
                                     </a>
                                 </p>
                                 <p id="757d4440-b720-4600-98e0-8cd025244280" className="">
